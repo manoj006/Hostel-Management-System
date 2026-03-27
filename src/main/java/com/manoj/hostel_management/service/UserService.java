@@ -1,5 +1,7 @@
 package com.manoj.hostel_management.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,5 +18,9 @@ public class UserService {
 	public User Register(User user) {
 		user.setRole(Role.RESIDENT);
 		return userRepository.save(user);
+	}
+	
+	public List<User> getAllUsers() {
+		return userRepository.findAll();
 	}
 }
